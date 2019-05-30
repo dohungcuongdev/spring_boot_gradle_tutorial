@@ -1,12 +1,25 @@
+buildscript {
+   ext {
+      springBootVersion = '2.1.5.RELEASE'
+   }
+   repositories {
+      mavenCentral()
+   }
+   dependencies {
+      classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+   }
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.1.5.RELEASE'
 	id 'java'
 }
 apply plugin: 'eclipse'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'war'
+apply plugin: 'war' //for deploy with tomcat
+//apply plugin: 'jar'
 apply plugin: 'application'
-mainClassName='com.examplehttps.start.spring.io.demo.DemoApplication'
+mainClassName='com.myproject.Application'
 
 group = 'com.examplehttps://start.spring.io/#'
 version = '0.0.1-SNAPSHOT'
@@ -16,8 +29,20 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+   springCloudVersion = 'Edgware.RELEASE'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+}
+
+dependencyManagement {
+   imports {
+      mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+   }
 }
