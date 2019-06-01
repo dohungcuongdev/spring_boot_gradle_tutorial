@@ -7,7 +7,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Component
-public class ProductServiceInterceptor implements HandlerInterceptor {
+public class ProductServiceInterceptor implements HandlerInterceptor { //Interceptor
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

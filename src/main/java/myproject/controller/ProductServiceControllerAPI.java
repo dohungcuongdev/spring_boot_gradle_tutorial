@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import myproject.exception.ProductNotfoundException;
 import myproject.model.Product;
 
+//run Application.java - test http://localhost:9090/api/products or http://localhost:9090/api/products/[ID] :E.g http://localhost:9090/api/products/1
 @RestController
 @RequestMapping("/api")
-public class ProductServiceControllerAPI {
+public class ProductServiceControllerAPI { //Building RESTful Web Services
+	
 	private static Map<String, Product> productRepo = new HashMap<>();
 	static {
 		Product honey = new Product();
@@ -31,7 +33,7 @@ public class ProductServiceControllerAPI {
 	}
 
 	@CrossOrigin
-	@RequestMapping(value = "/products", produces = "application/json; charset=UTF-8")
+	@RequestMapping(value = "/products", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
 	public ResponseEntity<Object> getProduct() {
 		System.out.println("getProduct is Calling");
 		return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
@@ -50,7 +52,7 @@ public class ProductServiceControllerAPI {
 	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
 		System.out.println("updateProduct is Calling");
 		if (!productRepo.containsKey(id))
-			throw new ProductNotfoundException();
+			throw new ProductNotfoundException(); //Exception Handling
 		productRepo.remove(id);
 		product.setId(id);
 		productRepo.put(id, product);

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import myproject.model.Product;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService { //Service Components
    private static Map<String, Product> productRepo = new HashMap<>();
    static {
       Product honey = new Product();

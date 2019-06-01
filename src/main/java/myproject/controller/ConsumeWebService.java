@@ -16,8 +16,9 @@ import org.springframework.web.client.RestTemplate;
 
 import myproject.model.Product;
 
+//run Application.java - test http://localhost:9090/template/products or http://localhost:9090/template/products/[ID] :E.g http://localhost:9090/api/products/1
 @RestController
-public class ConsumeWebService {
+public class ConsumeWebService { //Rest Template
 	
 	@Autowired
 	RestTemplate restTemplate;

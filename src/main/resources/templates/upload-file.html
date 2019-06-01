@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1" />
+      <title>Upload File</title>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<script>
+		$(function(){
+			$('#uploadFileButton').on('click', function(){
+			    var file = document.getElementById("file").files[0];
+			    var form = new FormData();
+			    form.append("file", file);
+		
+			    var settings = {
+			      "async": true,
+			      "crossDomain": true,
+			      "url": "http://localhost:9090/upload",
+			      "method": "POST",
+			      "processData": false,
+			      "contentType": false,
+			      "mimeType": "multipart/form-data",
+			      "data": form
+			    };
+			    $.ajax(settings).done(function (response) {
+			      console.log(response);
+			    });
+			  });
+			});
+		</script>
+	</head>
+	<body>
+		<input id="file" type="file"/><br />
+		<input id="uploadFileButton" type="button" value="Upload"/>	
+   </body>
+</html>

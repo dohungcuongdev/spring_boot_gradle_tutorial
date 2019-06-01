@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import myproject.model.Product;
 
-public interface ProductService {
+public interface ProductService { //Service Components
    public abstract void createProduct(Product product);
    public abstract void updateProduct(String id, Product product);
    public abstract void deleteProduct(String id);

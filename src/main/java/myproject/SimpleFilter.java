@@ -10,9 +10,10 @@ import javax.servlet.ServletResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleFilter implements Filter {
+public class SimpleFilter implements Filter { //Servlet Filter
 	@Override
 	public void destroy() {
+		System.out.println("destroy was called");
 	}
 
 	@Override
@@ -25,5 +26,6 @@ public class SimpleFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterconfig) throws ServletException {
+		System.out.println("init was called before starting up tomcat");
 	}
 }
