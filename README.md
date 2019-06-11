@@ -21,7 +21,7 @@ Spring Boot - Twilio
 Spring Boot - Unit Test Cases
 Rest Controller Unit Test
 Spring Boot - Database Handling
-Securing Web Applications
-Spring Boot - OAuth2 with JWT
+
+
 Spring Boot - Google Cloud Platform
 Spring Boot - Google OAuth2 Sign-In
