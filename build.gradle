@@ -42,6 +42,12 @@ dependencies {
 	// Thymeleaf
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 	
+	// Eureka Server - Service Registration with Eureka
+	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+	
+	// Cloud Configuration Server - Cloud Configuration Client
+	compile('org.springframework.cloud:spring-cloud-config-server')
+	
 	// Zuul Proxy Server and Routing
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
 	
@@ -79,7 +85,7 @@ task buildDocker(type: Docker, dependsOn: build) {
    }
 }
 
-//Zuul Proxy Server and Routing, Actuator, Admin Server, Hystrix
+// for org.springframework.cloud dependecies
 ext {
 	// this springCloudVersion is not working with spingboot version 2.1.5
    springCloudVersion = 'Edgware.RELEASE'

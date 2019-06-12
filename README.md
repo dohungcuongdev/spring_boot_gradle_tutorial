@@ -1,9 +1,6 @@
 Spring Boot Application with Gradle following instruction in Turtorial Points
 
 #This application does not include the following sections in Turtorial Points
-Spring Boot - Enabling HTTPS
-Spring Boot - Eureka Server
-Service Registration with Eureka
 
 Spring Cloud Configuration Server
 Spring Cloud Configuration Client
