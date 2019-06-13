@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebsecurityappApplication {
 	
 	/*Step to test:
+	 * uncomment all related config in application.properties
+     * uncomment all related dependency in build.gradle, need spring cloud dependency
+     * 
 	 * Generate private key: Open terminal and run the command
 	 * openssl genrsa -out jwt.pem 2048
 	 * openssl rsa -in jwt.pem 

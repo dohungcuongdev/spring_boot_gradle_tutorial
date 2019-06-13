@@ -7,9 +7,8 @@ Service Registration with Eureka
 
 Spring Cloud Configuration Server
 Spring Cloud Configuration Client
-Spring Boot - Actuator
+
 Spring Boot - Admin Server
-Spring Boot - Admin Client
 
 Tracing Micro Service Logs
 

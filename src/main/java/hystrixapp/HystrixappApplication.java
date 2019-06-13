@@ -22,6 +22,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @RestController
 public class HystrixappApplication { // Hystrix
 	
+    // uncomment all related dependency in build.gradle, need spring cloud dependency
+    // refresh gradle
+	// run server on port 9090 and test on http://localhost:9090
 	public static void main(String[] args) {
 		SpringApplication.run(HystrixappApplication.class, args);
 	}
@@ -30,7 +33,7 @@ public class HystrixappApplication { // Hystrix
 	@HystrixCommand(fallbackMethod = "fallback_hello", commandProperties = {
 			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000") })
 	public String hello() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(3000); // timeout is set to 1s while this REST API need >=3s to response
 		return "Welcome Hystrix";
 	}
 

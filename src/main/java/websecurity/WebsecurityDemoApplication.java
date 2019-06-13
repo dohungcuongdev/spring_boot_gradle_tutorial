@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebsecurityDemoApplication { //Securing Web Applications
 	
 	/* Test
+     * uncomment all related dependency in build.gradle, need spring cloud dependency
 	 * 
 	 * Run this class WebsecurityDemoApplication
 	 * 
